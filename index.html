@@ -1,0 +1,1075 @@
+
+<!doctype html>
+<html lang="en-US" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<title> Shubham Bhattacharya | Developer</title>
+
+		
+        <link href="img/favicon.ico" rel="shortcut icon">
+        <link href="img/touch.png" rel="apple-touch-icon-precomposed">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+		<meta name="description" content="">
+
+				
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+			
+</style>
+<link rel='stylesheet' id='normalize-css'  href='css/normalize.css' media='all' />
+<link rel='stylesheet' id='html5blank-css'  href='css/style.css' media='all' />
+<link rel="stylesheet" type="text/css" href="css/default.css"  media='all' />
+<link rel="stylesheet" type="text/css" href="css/component.css"  media='all' />
+<script src="js/modernizr.custom.js"></script>
+<script type='text/javascript' src='js/conditionizr-4.3.0.min.js'></script>
+<script type='text/javascript' src='js/modernizr-2.7.1.min.js'></script>
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='js/scripts.js'></script>
+<style>
+
+</style>
+		
+        
+<script src="js/jquery-latest.min.js" type="text/javascript"></script>
+<script>
+setTimeout(function(){
+	$(window).ready(function(){
+		$('#loadinghold').addClass('loadingholdno');
+		$('#loadsquare').remove();
+		setTimeout(function(){
+			$('#loadinghold').remove();
+			$('.header,.logo,#home-down').removeClass('preload');
+		},1000);
+	});
+},2000);
+//prevent browser jump to last viewed area
+window.onload = function() {
+ setTimeout (function () {
+  scrollTo(0,0);
+ }, 500);
+ $.when($(".audioClass").trigger('play')).done(function(){
+	setTimeout(function() {
+		$(".audioClass").trigger('pause');
+		console.log("stop playing audio")
+	}, 60000);
+ });
+}
+
+function cycleImagesone(){
+      			var $active = $('#pepsimain div .active');
+      			var $next = ($active.next().length > 0) ? $active.next() : $('#pepsimain div img:first');
+      			$next.css('z-index',2);//move the next image up the pile
+      			$active.fadeOut(1500,function(){//fade out the top image
+	  				$active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          			$next.css('z-index',3).addClass('active');//make the next image the top one
+      			});
+    		}
+			function cycleImagestwo(){
+      			var $active = $('#pepsiarticles div .active');
+      			var $next = ($active.next().length > 0) ? $active.next() : $('#pepsiarticles div img:first');
+      			$next.css('z-index',2);//move the next image up the pile
+      			$active.fadeOut(1500,function(){//fade out the top image
+	  				$active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          			$next.css('z-index',3).addClass('active');//make the next image the top one
+      			});
+    		}
+			function cycleImagesthree(){
+      			var $active = $('#pepsireports div .active');
+      			var $next = ($active.next().length > 0) ? $active.next() : $('#pepsireports div img:first');
+      			$next.css('z-index',2);//move the next image up the pile
+      			$active.fadeOut(1500,function(){//fade out the top image
+	  				$active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          			$next.css('z-index',3).addClass('active');//make the next image the top one
+      			});
+    		}
+var width = '';
+var headerheight = '';
+var windowheight = '';
+var heightminusheader = '';
+function jazzitup(){ //begin primary function
+
+//make placeholders disappear
+var txtbox = $('input,textarea');
+txtbox.each(function(){
+	var plchldr = $(this).attr('placeholder');
+	$(this).focus(function () {
+		$(this).removeAttr('placeholder');
+	});
+	$(this).blur(function(){
+		if($(this).val() == ''){
+			$(this).attr('placeholder',plchldr);
+		}
+	});
+});
+
+//the down arrow clicks
+$('#home-down,#workbut').click(function(){
+	$('body').animate({
+		scrollTop: $("section#work").offset().top
+	}, 1700);
+});
+$('#work-down,#servicebut').click(function(){
+	$('body').animate({
+		scrollTop: $("section#services").offset().top
+	}, 1700);
+});
+$('#services-down,#aboutbut').click(function(){
+	$('body').animate({
+		scrollTop: $("section#about").offset().top
+	}, 1700);
+});
+$('#about-down,#contactbut').click(function(){
+	$('body').animate({
+		scrollTop: $("section#contact").offset().top
+	}, 1700);
+});
+$('#work .button').click(function(){
+	/*$('body').animate({
+		scrollTop: $("section#contact").offset().top
+	}, 1700);*/
+});
+
+//size the pepsi images correctly
+var jnpt = $('#pepsimain div img:first').height()*0.30;
+$("#pepsimain").height($("#pepsimain div img:first").height()+jnpt);
+var jmpt = $('#pepsiarticles div img:first').height()*0.30;
+$("#pepsiarticles").height($("#pepsiarticles div img:first").height()+jmpt);
+var jkpt = $('#pepsireports div img:first').height()*0.30;
+$("#pepsireports").height($("#pepsireports div img:first").height()+jkpt);
+
+//cycle through images in work section
+setInterval('cycleImagesone()', 4000);
+setInterval('cycleImagestwo()', 4000);
+setInterval('cycleImagesthree()', 4000);
+
+//highlight the clicked right nav button
+$('#rightnav li').each(function(){
+	$(this).click(function(){
+		$('#rightnav li').each(function(){
+			$(this).removeClass('isactive');
+		});
+		$(this).addClass('isactive');
+	});
+});
+
+//run the arrow hover animations
+$('#home-down img').addClass('whack');
+$('#home-down,#work-down,#about-down,#services-down,#footer-down').hover(function(){
+	$(this).children('img').addClass('whacked');
+},function() {
+	$(this).children('img').removeClass('whacked');
+});
+
+//run the arrow clicks
+$('#footer-down').click(function(){
+	$('html, body').animate({
+		scrollTop: $("#home").offset().top
+	}, 1700);
+});
+			
+//this is the work button function to open the 4up work panels
+$('#work .button').click(function(e){
+		//return false;
+		e.preventDefault();
+		$('body').addClass('activated');
+		$('#work .vert,#work .drawabox1').addClass('growit');
+		$('#hiddenwork').addClass('plusser');
+		$('#hiddenwork').addClass('bringforward');
+		$('.worktitle').addClass('growtitle');
+		$('#greymare').addClass('makeit');
+		setTimeout(function(){
+			$('#greymare').removeClass('makeit');
+			$('#work').addClass('lim activated');
+		},500);
+		if(width < 1024){
+			$('html, body').animate({
+				scrollTop: $("#work").offset().top
+			}, 0);
+		}
+});
+
+//this is the hover function that animates the work button background color
+$('#work .button').hover(function(){
+	$(this).addClass('bleu').removeClass('notbleu');
+},function() {
+	$(this).removeClass('bleu').addClass('notbleu');
+});
+
+$('#closer1').click(function(e){
+	$('#row1left.expander1 .closer').removeClass('opaque');
+	$('#cbp1').removeClass('opaque');
+	$('#row1left.expander1 .contentbox').removeClass('opaque');
+	$('#row1left.expander1').removeClass('expander1');
+	setTimeout(function(){
+		$('#row1left').removeClass('expander2');
+	},500);
+	$('body').animate({
+		scrollTop: $("section#work").offset().top
+	}, 0);
+	$('#hiddenwork').removeClass('fixed');
+	$('#row1left').addClass('bringback');
+	e.stopPropagation();
+});
+	
+$('#closer2').click(function(e){
+	$('#row1right.expander1 .closer').removeClass('opaque');
+	$('#cbp2').removeClass('opaque');
+	$('#row1right.expander1 .contentbox').removeClass('opaque');
+	$('#row1right.expander1').removeClass('expander1');
+	setTimeout(function(){
+		$('#row1right').removeClass('expander2');
+	},500);
+	$('body').animate({
+		scrollTop: $("section#work").offset().top
+	}, 0);
+	$('#hiddenwork').removeClass('fixed');
+	$('#row1right').addClass('bringback');
+	e.stopPropagation();
+});
+	
+$('#closer3').click(function(e){
+	$('#row2left.expander1 .closer').removeClass('opaque');
+	$('#cbp3').removeClass('opaque');
+	$('#row2left.expander1 .contentbox').removeClass('opaque');
+	$('#row2left.expander1').removeClass('expander1');
+	setTimeout(function(){
+		$('#row2left').removeClass('expander2');
+	},500);
+	$('body').animate({
+		scrollTop: $("section#work").offset().top
+	}, 0);
+	$('#hiddenwork').removeClass('fixed');
+	$('#row2left').addClass('bringback');
+	e.stopPropagation();
+});
+	
+$('#closer4').click(function(e){
+	$('#row2right.expander1 .closer').removeClass('opaque');
+	$('#cbp4').removeClass('opaque');
+	$('#row2right.expander1 .contentbox').removeClass('opaque');
+	$('#row2right.expander1').removeClass('expander1');
+	setTimeout(function(){
+		$('#row2right').removeClass('expander2');
+	},500);
+	$('html, body').animate({
+		scrollTop: $("section#work").offset().top
+	}, 0);
+	$('#hiddenwork').removeClass('fixed');
+	$('#row2right').addClass('bringback');
+	e.stopPropagation();
+});
+	
+$('#hidowork div.rowblock').each(function(){
+	$(this).click(function(){
+		$('#row1left,#row2left,#row1right,#row2right').removeClass('expander2 expander1 bringback');
+		$('#work').addClass('fixed rutger');
+		$(this).addClass('expander1');
+		var htis = $(this);		
+		setTimeout(function(){
+			htis.addClass('expander2');	
+		},500);
+		$(this).children('.contentbox').addClass('opaque');
+		$(this).children('.closer').addClass('opaque');
+			
+		var gryti = $(this).attr('id');
+		if(gryti == 'row1left'){
+			$('#cbp1').addClass('opaque');
+			$('#cbp2 #cbp3 #cbp4').removeClass('opaque');
+		}
+		if(gryti == 'row1right'){
+			$('#cbp2').addClass('opaque');
+			$('#cbp1 #cbp3 #cbp4').removeClass('opaque');
+		}
+		if(gryti == 'row2left'){
+			$('#cbp3').addClass('opaque');
+			$('#cbp1 #cbp2 #cbp4').removeClass('opaque');
+		}
+		if(gryti == 'row2right'){
+			$('#cbp4').addClass('opaque');
+			$('#cbp1 #cbp2 #cbp3').removeClass('opaque');
+			setTimeout(function(){
+				var jwpt = $('#pepsimain div img:first').height()*0.30;
+				$("#pepsimain").height($("#pepsimain div img:first").height()+jwpt);
+				var jept = $('#pepsiarticles div img:first').height()*0.30;
+				$("#pepsiarticles").height($("#pepsiarticles div img:first").height()+jept);
+				var jspt = $('#pepsireports div img:first').height()*0.30;
+				$("#pepsireports").height($("#pepsireports div img:first").height()+jspt);
+			},500);
+		}
+
+		$(this).children('.worktitle').removeClass('opaque');
+		$('#hiddenwork').addClass('fixed');
+	});
+
+	$(this).children('h2.worktitle').click(function(){
+		$('#row1left,#row2left,#row1right,#row2right').removeClass('expander1');
+		$('#work').addClass('fixed rutger');
+		$(this).addClass('expander1');
+		var htis = $(this);		
+		setTimeout(function(){
+			htis.addClass('expander2');	
+		},500);
+		$(this).parent().children('.contentbox').addClass('opaque');
+		$(this).parent().children('.closer').addClass('opaque');
+		var gryti = $(this).parent().attr('id');
+
+		if(gryti == 'row1left'){
+			$('#cbp1').addClass('opaque');
+			$('#cbp2 #cbp3 #cbp4').removeClass('opaque');
+		}
+		if(gryti == 'row1right'){
+			$('#cbp2').addClass('opaque');
+			$('#cbp1 #cbp3 #cbp4').removeClass('opaque');
+		}
+		if(gryti == 'row2left'){
+			$('#cbp3').addClass('opaque');
+			$('#cbp1 #cbp2 #cbp4').removeClass('opaque');
+		}
+		if(gryti == 'row2right'){
+			$('#cbp4').addClass('opaque');
+			$('#cbp1 #cbp2 #cbp3').removeClass('opaque');
+		}
+		$(this).parent().children('.worktitle').removeClass('opaque');
+		$('#hiddenwork').addClass('fixed');
+	});
+});
+
+if(width < 1024){
+	$('.logo').addClass('preshrunk'); //shrink logo
+	$('.logosmall').addClass('bringin').removeClass('preload');
+	$('#work .vert p,#work .vert .whitebord,#work .vert h2,#work .vert .button').addClass('activo');
+	$('#services .inner').addClass('activo');
+	$('#about .inner').addClass('activo');
+	$('#contact .inner').addClass('activo');
+}
+
+//this is the function for all li items in menu
+$('.nav li').each(function(){
+	var getit = $(this).children('a').attr('class');
+	$(this).click(function(){
+		if($('.nav').hasClass('expanded')){
+			$('.nav').removeClass('expanded');
+		}
+		if(width < 1024){
+			if($('body').hasClass('activated')){
+				$('#row1left.expander1 .closer,#row1right.expander1 .closer,#row2left.expander1 .closer,#row2right.expander1 .closer').removeClass('opaque');
+				$('#cbp1,#cbp2,#cbp3,#cbp4').removeClass('opaque');
+				$('#row1left.expander1 .contentbox,#row1right.expander1 .contentbox,#row2left.expander1 .contentbox,#row2right.expander1 .contentbox').removeClass('opaque');
+				$('#row1left.expander1,#row1right.expander1,#row2left.expander1,#row2right.expander1').removeClass('expander1');
+				$('#hiddenwork').addClass('reversal');
+				$('#greymare').addClass('makeit');
+				setTimeout(function(){
+					$('#greymare').removeClass('makeit');
+					$('body,#work').removeClass('activated');
+					$('#hiddenwork').removeClass('plusser bringforward');
+					$('#work .vert,#work .drawabox1').removeClass('growit');
+					$('#work').removeClass('lim');
+					$('#hiddenwork').removeClass('reversal');
+					$('html, body').animate({
+       					scrollTop: $("section#"+getit).offset().top - 59
+    				}, 1700);
+				},1000);
+			} else {
+				$('html, body').animate({
+       				scrollTop: $("section#"+getit).offset().top - 59
+    			}, 1700);
+			}
+		}
+		if(width > 1024){
+			if($('body').hasClass('activated')){
+				$('#row1left.expander1 .closer,#row1right.expander1 .closer,#row2left.expander1 .closer,#row2right.expander1 .closer').removeClass('opaque');
+				$('#cbp1,#cbp2,#cbp3,#cbp4').removeClass('opaque');
+				$('#row1left.expander1 .contentbox,#row1right.expander1 .contentbox,#row2left.expander1 .contentbox,#row2right.expander1 .contentbox').removeClass('opaque');
+				$('#row1left.expander1,#row1right.expander1,#row2left.expander1,#row2right.expander1').removeClass('expander1');
+				$('#hiddenwork').addClass('reversal');
+				$('#greymare').addClass('makeit');
+				setTimeout(function(){
+					$('#greymare').removeClass('makeit');
+					$('body,#work').removeClass('activated');
+					$('#hiddenwork').removeClass('plusser bringforward');
+					$('#work .vert,#work .drawabox1').removeClass('growit');
+					$('#work').removeClass('lim');
+					$('#hiddenwork').removeClass('reversal');
+					$('html, body').animate({
+       					scrollTop: $("section#"+getit).offset().top
+    				}, 1700);
+				},1000);
+			} else {
+				$('html, body').animate({
+       				scrollTop: $("section#"+getit).offset().top
+    			}, 1700);
+			}
+		}
+	});
+});
+//this is the function when clicking the logo
+$('.logo,#homebut,.logosmall').click(function(){
+	if($('.nav').hasClass('expanded')){
+		$('.nav').removeClass('expanded');
+	}
+	if($('body').hasClass('activated')){
+		$('#row1left.expander1 .closer,#row1right.expander1 .closer,#row2left.expander1 .closer,#row2right.expander1 .closer').removeClass('opaque');
+		$('#cbp1,#cbp2,#cbp3,#cbp4').removeClass('opaque');
+		$('#row1left.expander1 .contentbox,#row1right.expander1 .contentbox,#row2left.expander1 .contentbox,#row2right.expander1 .contentbox').removeClass('opaque');
+		$('#row1left.expander1,#row1right.expander1,#row2left.expander1,#row2right.expander1').removeClass('expander1');
+		$('#hiddenwork').addClass('reversal');
+		$('#greymare').addClass('makeit');
+		setTimeout(function(){
+			$('#greymare').removeClass('makeit');
+			$('body,#work').removeClass('activated');
+			$('#hiddenwork').removeClass('plusser bringforward');
+			$('#work .vert,#work .drawabox1').removeClass('growit');
+			$('#work').removeClass('lim');
+			$('#hiddenwork').removeClass('reversal');
+			$('html,body').animate({
+    			scrollTop: $('body').offset().top
+    		}, 1700);
+		},1000);
+	} else {
+		$('html,body').animate({
+    		scrollTop: $('body').offset().top
+    	}, 1700);
+	}
+});
+
+if(width > 1024){//if desktop
+	$('.inner').each(function(){ //function to size centered content in divs
+		var grt = $(this);
+		var bbb = 0;
+    	$(this).children().each(function(){
+			bbb += $(this).outerHeight(true);
+		});
+		if($(this).parent().parent().attr('id') != 'work'){
+			$(this).attr('style','height:'+bbb+'px');
+		} else {
+			$(this).attr('style','height:258px');
+		}
+	});
+	
+	//begin the scrolling function that slides panels as you scroll, as well as beings in the header, etc
+	var istop = '';
+	var worktop = '';
+	var servicetop = '';
+	var abouttop = '';
+	var contacttop = '';
+	var iScrollPos = 0;
+	
+	$(window).scroll(function () { //begin scroll function
+		
+		var iCurScrollPos = $(window).scrollTop(); //location of scrollbar
+		istop = $('#home-down').offset().top - $(window).scrollTop();
+		worktop = $('#work').offset().top - $(window).scrollTop();
+		servicetop = $('#services').offset().top - $(window).scrollTop();
+		abouttop = $('#about').offset().top - $(window).scrollTop();
+		contacttop = $('#contact').offset().top - $(window).scrollTop();
+		
+		if (iCurScrollPos > iScrollPos) {//if user is scrolling downward
+			
+			if(istop < 140 && $('#hiddenwork').offset().top != 0){//if user has scrolled past header height
+				$('.header').addClass('shrunk');//shrink header
+				$('.logo').addClass('preshrunk');//shrink logo
+				$('.header').addClass('shrunker');
+				$('.logosmall').addClass('bringin').removeClass('preload');
+			}//end if user has scrolled past header height
+			
+			if(worktop > 0 && contacttop > 0 && abouttop > 0 && servicetop > 0){
+				$('#homebut').addClass('isactive');
+				$('#aboutbut,#workbut,#contactbut,#servicebut').removeClass('isactive');
+				$('#rightnav li').each(function(){
+					$(this).removeClass('isabout');
+				});
+				$('#work .vert,.drawabox1,.drawabox2,.drawabox3,.drawabox4,.drawabox5').removeClass('fixed');
+			}
+			
+			if(worktop <= 0){//if work is at top of page
+				$('#work .vert,#work .drawabox1').addClass('fixed');
+				$('#about .vert,#services .vert,#contact .vert').removeClass('fixed');
+				if($('.drawabox1,.drawabox2,.drawabox3,.drawabox4,.drawabox5').length < 1){
+					$('#work').prepend("<div class='drawabox1'><div id='bord1'></div><div id='bord2'></div><div id='bord3'></div><div id='bord4'></div></div>");
+				}
+				$('#work .vert p,#work .vert .whitebord,#work .vert h2,#work .vert .button').addClass('activo');
+				$('#workbut').addClass('isactive');
+				$('#aboutbut,#servicebut,#homebut,#contactbut').removeClass('isactive');
+				$('#rightnav li').each(function(){
+					$(this).removeClass('isabout');
+				});
+			}
+			
+			if(servicetop <= 0){//if work is at top of page
+				$('#services .vert').addClass('fixed');
+				$('#about .vert,#work .vert,#work .drawabox1,#contact .vert').removeClass('fixed');
+				$('#services .inner').addClass('activo');
+				$('#servicebut').addClass('isactive');
+				$('#aboutbut,#workbut,#homebut,#contactbut').removeClass('isactive');
+				$('#rightnav li').each(function(){
+					$(this).addClass('isabout');
+				});
+			}
+			
+			if(abouttop <= 0){//if work is at top of page
+				$('#about .vert').addClass('fixed');
+				$('#work .vert,#services .vert,#contact .vert').removeClass('fixed');
+				$('#about .inner').addClass('activo');
+				$('#aboutbut').addClass('isactive');
+				$('#workbut,#servicebut,#homebut,#contactbut').removeClass('isactive');
+				$('#rightnav li').each(function(){
+					$(this).removeClass('isabout');
+				});
+			}
+			
+			if(contacttop <= 0){//if work is at top of page
+				$('#about .vert,#work .vert,#contact .vert').removeClass('fixed');
+				$('#contact .inner').addClass('activo');
+				$('#contactbut').addClass('isactive');
+				$('#aboutbut,#workbut,#homebut,#servicebut').removeClass('isactive');
+				$('#rightnav li').each(function(){
+					$(this).removeClass('isabout');
+				});
+			}
+			
+		} else { //end if user is scrolling downward, start if scrolling upward
+			
+			if(istop > 140 && $('#hiddenwork').offset().top != 0){//if user has scrolled past header height
+				$('.header').removeClass('shrunk');//shrink header
+				$('.logo').removeClass('preshrunk');//shrink logo
+				$('.header').removeClass('shrunker');
+				$('.logosmall').removeClass('bringin').addClass('preload');
+			}//end if user has scrolled past header height
+			
+			if(worktop > 0){//if work is at top of page
+				$('#work .vert,.drawabox1,.drawabox2,.drawabox3,.drawabox4,.drawabox5').removeClass('fixed');
+				$('#work .inner').removeClass('activo');
+				if($('.drawabox1,.drawabox2,.drawabox3,.drawabox4,.drawabox5').length >= 1){
+					$('#work').remove("<div class='drawabox1'><div id='bord1'></div><div id='bord2'></div><div id='bord3'></div><div id='bord4'></div></div>");
+				}
+			}
+			
+			if(servicetop > 0){//if work is at top of page
+				$('#services .vert').removeClass('fixed');
+				$('#services .inner').removeClass('activo');
+			}
+			
+			if(contacttop > 0){//if work is at top of page
+				$('#contact').removeClass('fixed');
+				$('#contact .inner').removeClass('activo');
+			}
+			
+		} //end if scrolling upward
+		
+	}); //end scroll function
+	
+	
+} else {//if mobile
+	$('.header').removeClass('shrunk shrunker');
+	var headerheight = $('.header').height();
+	var windowheight = $(window).height();
+	//var heightminusheader = windowheight - headerheight;
+	//$('#hidowork').height(heightminusheader);
+}
+
+}//end primary function
+
+$(document).ready(function(){
+	width = $('body').width();
+	headerheight = $('.header').height();
+	windowheight = $(window).innerHeight();
+	heightminusheader = windowheight - headerheight;
+	if(width < 1024){
+		$('#hidowork').height(heightminusheader);
+	}
+	if(width > 1024){
+		$('#hidowork').height('100%');
+	}
+	
+	if(/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) { 
+    	if(/OS [2-4]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent)) {  
+        	// iOS 2-4 so Do Something   
+    	} else if(/CPU like Mac OS X/i.test(navigator.userAgent)) {
+        	// iOS 1 so Do Something 
+    	} else {
+        	//ios5+
+			headerheight = $('.header').height();
+			windowheight = $(window).innerHeight();
+			heightminusheader = windowheight - headerheight;
+			if(width < 1024){
+				$('#hidowork').height(heightminusheader);
+			}
+			if(width > 1024){
+				$('#hidowork').height('100%');
+			}	
+    	}
+	}
+	
+	jazzitup();
+	$(window).bind("mousewheel touchmove", function() {
+    	$("html, body").stop();
+	});
+});
+$(window).resize(function(){
+	width = $('body').width();
+	headerheight = $('.header').height();
+	windowheight = $(window).innerHeight();
+	heightminusheader = windowheight - headerheight;
+	if(width < 1024){
+		$('#hidowork').height(heightminusheader+75);
+	}
+	if(width > 1024){
+		$('#hidowork').height('100%');
+	}
+	
+	if(/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) { 
+    	if(/OS [2-4]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent)) {  
+        	// iOS 2-4 so Do Something   
+    	} else if(/CPU like Mac OS X/i.test(navigator.userAgent)) {
+        	// iOS 1 so Do Something 
+    	} else {
+        	//ios5+
+			headerheight = $('.header').height();
+			windowheight = $(window).innerHeight();
+			heightminusheader = windowheight - headerheight;
+			if(width < 1024){
+				$('#hidowork').height(heightminusheader+75);
+			}
+			if(width > 1024){
+				$('#hidowork').height('100%');
+			}	
+    	}
+	}
+	
+	jazzitup();
+	$(window).bind("mousewheel touchmove", function() {
+    	$("html, body").stop();
+	});
+});
+
+
+</script>
+        <script>
+	$(document).ready(function() {
+	$('.progress-button').click(function(){
+		$('form#contactForm').submit();
+	});
+	$('form#contactForm').submit(function() {
+	setTimeout(function(){
+	$('form#contactForm .error').remove();
+	var hasError = false;
+	
+	$('.requiredField').each(function() {
+   		if(jQuery.trim($(this).val()) == '') {
+ 			var labelText = $(this).attr('placeholder');
+ 				$(this).attr('style','border:1px solid #3d0404');
+				
+			 hasError = true;
+		} else if($(this).hasClass('email')) {
+ 			var emailReg = /^([w.-]+@([w-]+.)+[w-]{2,4})?$/;
+ 			if(!emailReg.test(jQuery.trim($(this).val()))) {
+  				var labelText = $(this).attr('placeholder');
+  					$(this).attr('placeholder','You entered an invalid email address');
+					$(this).attr('style','border:2px solid #3d0404');
+  				hasError = true;
+ 			}
+		}
+	});
+	
+	
+	if(!hasError) {
+		$('.progress-button').addClass('state-success');
+		$('.progress-button').removeClass('state-error');
+		var formInput = $('form#contactForm').serialize();
+			$.post($('form#contactForm').attr('action'),formInput, function(data){
+					//$('form#contactForm').slideUp("fast", function() {       
+     					//$(this).before('<p class="thanks"><strong>Thanks!</strong> Your email was successfully sent. I check my email all the time, so I should be in touch soon.</p>');
+    				//});
+			});
+	}
+	if(hasError){
+		$('form#contactForm #namefield').before('<label class="error">**Please fill the required fields**</label>');
+		$('.progress-button').addClass('state-error');
+		$('.progress-button').removeClass('state-success');
+		setTimeout(function(){
+			$('.progress-button').removeClass('state-success');
+			$('.progress-button').removeClass('state-error');
+		},1500);
+	}
+	},1000);
+	return false;	
+	});
+	
+	//sending email
+	$(".sendEmail").click(function(){
+		//disbale button
+		//add loading image
+		//create data to be sent
+		var name = $("#contactName").val();
+		var email_address = $("#email").val();
+		var phone_number = $("#message_phone").val();
+		var desc = $("#message_text").val();
+		//ajax call for sending data
+		$.ajax({
+			url : "sendEmail.php",
+			type: "POST",
+			data: {
+				firstName : name,
+				emailAddress : email_address,
+				phoneNumber : phone_number,
+				projDesc : desc,
+				
+			}, 
+			success: function(data){
+				console.log(data);
+			},
+			error: function(d){
+				console.log(d);
+			}
+			
+		
+		});
+		//remove disabled
+	});
+	
+});
+</script>
+	</head>
+
+	<body class="home page page-id-4 page-template page-template-home page-template-home-php">
+		
+		<!-- wrapper -->
+		<!--<div class="wrapper">-->
+			<audio class=audioClass hidden>
+				<source src="music/bgmusicnew.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
+
+			<!-- header -->
+			<header class="header clear preload">
+
+					<!-- logo -->
+					<div class="logo preload">
+						<a href="javascript:void(0)">
+							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+							<img src="img/touch.png" alt="Logo" class="logo-img">
+						</a>
+					</div>
+                    <div class="logosmall preload">
+						<a href="javascript:void(0)">
+							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+							<img src="img/touch.png" alt="Logo" class="logo-img logobig">
+                            <img src="img/touch1.png" alt="Logo" class="logo-img logomobile">
+							<p class="logomobile" style="margin-top: -32px; margin-left: 55px; width: 1000px; font-variant: small-caps; font-weight: bolder; font-size: 20px;">Shubham Bhattacharya</p>
+						</a>
+					</div>
+					<!-- /logo -->
+
+					<!-- nav -->
+                    <div id="hamburger-train">
+         				<ul><li></li><li></li><li></li></ul>
+         			</div>
+					<nav class="nav"> 
+						<ul><li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a href="javascript:void(0)" class="work">Work</a></li>
+<li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="javascript:void(0)" class="services">What I Do</a></li>
+<li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8"><a href="javascript:void(0)" class="about">About</a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="javascript:void(0)" class="contact">Contact</a></li>
+</ul>
+					</nav>
+					<!-- /nav -->
+
+			</header>
+			<!-- /header -->
+
+<ul id="rightnav">
+	<li id="homebut" class="isactive"></li>
+    <li id="workbut"></li>
+    <li id="servicebut"></li>
+    <li id="aboutbut"></li>
+    <li id="contactbut"></li>
+</ul>
+<div id="loadinghold"><div id="loadsquare"></div></div>
+<section id="home"><!-- BEGIN HOME SECTION -->
+
+		<div class="container">	
+			
+			<div class="os-phrases" id="os-phrases">
+				<h2>Hello!!</h2>
+				<h2>Friends</h2>
+				<h2>I'm</h2>
+				<h2>Shubham Bhattacharya</h2>
+				<h2>A Web Developer</h2>
+				<h2>I work behind the scenes as a source for</h2>
+				<h2>strategic vision and thoughtful design.</h2>
+				<h2>SHUBHAM BHATTACHARYA</h2>
+				
+			</div>
+		</div>
+		<div class="vert"><!-- BEGIN VERT -->
+    		<div class="inner"><!-- BEGIN INNER -->
+				<h1>Hello. I'm</h1><!-- BEGIN TITLE -->
+            	<h2>Shubham Bhattacharya</h2><!-- TITLE -->
+            <div class="whitebord"></div><!-- WHITE BORDER -->
+       		<p>A Web Developer, who work behind the scenes as a source for, strategic vision and thoughtful design. I handle all aspects of website development from domain registration, hosting, website development and website maintenance.</p><!-- p -->
+       		<p>I have been successful as a freelancer, not just because of my web programming skills, but because I am a skilled and dependable web programmer that can be trusted to follow through with my work.</p>
+            
+    		</div><!-- END INNER -->
+        </div>
+
+        <div id="home-down" class="preload"><img src="img/downarrowwhite.png" alt="shubham-logo"/> </div>
+        
+</section><!-- END HOME SECTION -->
+
+<section id="work"><!-- BEGIN WORK SECTION -->
+<div id="greymare"></div>
+	<div class="vert">
+    	<!--<div class="inner">-->
+			<h2>Work</h2>
+    		<div class="whitebord"></div>
+   		 	<p>Tired of doing things the hard way?
+			People loves simple and reliable process, so I build beautiful, effective websites that work everywhere and are easy to update. Experience a better way to build your website.</p>
+    		<a href="javascript:void(0)" class="button">View Portfolio</a>
+    	<!--</div>-->
+    </div>
+    
+    <div id="hiddenwork"><!-- BEGIN HIDDEN WORK -->
+    	<div id="hidowork">
+    	<!--<div id="row1"> BEGIN ROW 1 -->
+        	<div id="row1left" class="rowblock"><!-- BEGIN ROW 1 Left-->
+            <h2 class="worktitle">C. Wall Architect</h2>
+            	
+                
+            </div><!-- END ROW 1 RIGHT -->
+            <div id="row1right" class="rowblock"><!-- BEGIN ROW 1 Left-->
+            <h2 class="worktitle">Kickboard</h2>
+            	
+            </div><!-- END ROW 1 RIGHT -->
+        <!--</div> END ROW 1 -->
+        
+        <!--<div id="row2">BEGIN ROW 2 -->
+        	<div id="row2left" class="rowblock"><!-- BEGIN ROW 2 LEFT -->
+            <h2 class="worktitle">Malagana Design</h2>
+                        	
+            </div><!-- END ROW 2 LEFT -->
+            <div id="row2right" class="rowblock"><!-- BEGIN ROW 2 RIGHT -->
+            <h2 class="worktitle">PepsiCo</h2>
+            	
+            </div><!-- END ROW 2 RIGHT -->
+        <!--</div>END ROW 2 -->
+
+        </div>
+    </div><!-- END HIDDEN WORK -->
+    <!-- END HIDDEN BOXES -->
+
+    <div id="work-down"><img src="img/downarrowblk.png" alt="arrow"/></div>
+    
+</section><!-- END WORK SECTION -->
+
+<section id="services"><!-- BEGIN SERVICES SECTION -->
+	<div id="iconsholder">
+    	<div class="icons">
+			<!--<div id="ico1" class="ico"></div>-->
+			<div id="ico2" class="ico"></div>
+			<div id="ico3" class="ico"></div>
+			<div id="ico4" class="ico"></div>
+			<div id="ico5" class="ico"></div>
+			<div id="ico6" class="ico"></div>
+			<div id="ico7" class="ico"></div>
+			<div id="ico8" class="ico"></div>
+			<div id="ico9" class="ico"></div>
+            <div id="ico10" class="ico"></div>
+			<div id="ico11" class="ico"></div>
+			<div id="ico12" class="ico"></div>
+			<div id="ico13" class="ico"></div>
+			<div id="ico14" class="ico"></div>
+			<div id="ico15" class="ico"></div>
+			<div id="ico16" class="ico"></div>
+			<div id="ico17" class="ico"></div>
+			<div id="ico18" class="ico"></div>
+            <div id="ico19" class="ico"></div>
+			<div id="ico20" class="ico"></div>
+            <div id="ico21" class="ico"></div>
+            <div id="ico22" class="ico"></div>
+            <div id="ico23" class="ico"></div>
+            <div id="ico24" class="ico"></div>
+            <div id="ico25" class="ico"></div>
+            <div id="ico26" class="ico"></div>
+            <div id="ico27" class="ico"></div>
+            <div id="ico28" class="ico"></div>
+            <div id="ico29" class="ico"></div>
+            <div id="ico30" class="ico"></div>
+            <div id="ico31" class="ico"></div>
+            <div id="ico32" class="ico"></div>
+            <div id="ico33" class="ico"></div>
+            <div id="ico34" class="ico"></div>
+		</div>
+    </div>
+	<div class="vert">
+    	<div class="inner">
+		<h2>Strengths</h2>
+        <div class="blackbord"></div>
+    	<ul>
+    		<li>Strategy</li>
+        	<li>Concepting</li>
+        	<li>Project Planning</li>
+        	<li>Application Design</li>
+            <li>Front & Back-end Development</li>
+            <li>Responsive Website</li>
+			<li>Content Management</li>
+			<li>Enterprise Resource Planning</li>
+        </ul>
+        </div>
+    </div>
+
+    <div id="services-down"><img src="img/downarrowwhite.png" alt="down-arrow"/></div>
+</section><!-- END SERVICES SECTION -->
+
+<section id="about"><!-- BEGIN ABOUT SECTION -->
+	<!--<div id="aboutimage"><img src="/images/nyc-cabs.jpg" /></div>-->
+	<div class="vert">
+    	<div class="inner">
+		<h2>About Me</h2>
+        <div class="whitebord"></div>
+        <div class="splitty">
+        	<div id="splittyleft">
+            	<p>I've been developing professionally for over several years taking on my own clients and projects. 
+				Now I am a full-time freelancer, with a skills list outside of the regular Web Developer title. I continually strive to learn as much as I can and grow as designer/developer. Over the past years, I have worked on many different types of projects - from web applications, responsive websites, front-end development, Wordpress Development, and everything in between.</p>
+			</div>
+            <div id="splittyright">
+            	<p>By combining my diverse disciplines, I provide services for businesses all shapes and sizes. My goal is to keep my design work simple and coding clean and functional, no matter how complex the project may be.</p>
+                <a href="shubhambhattacharya.pdf" download="shubhambhattacharya.pdf" class="button activo notbleu">RESUME</a>
+				<!--<p style="text-align:center">SOME OF MY SKILLS:</p>
+                <div class="whitebord"></div>
+                <ul>
+                	<li>WEB DESIGN</li>
+                    <li>GRAPHIC DESIGN</li>
+                    <li>DEVELOPMENT</li>
+                    <li>MOBILE DESIGN</li>
+                    
+                </ul>-->
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        </div>
+    </div>
+
+    <div id="about-down"><img src="img/downarrowwhite.png" alt="arrow"/></div>
+</section><!-- END ABOUT SECTION -->
+
+<section id="contact"><!-- BEGIN CONTACT SECTION -->
+	<div class="vert">
+    	<div class="inner">
+		<h2>Let's talk</h2>
+        <div class="whitebord"></div>
+        <!--<p>If you have a new business inquiry, an idea to talk through, or just need to hear a friendly voice, contact us anytime.</p>-->
+        <div class="socials">
+        	<div id="socialsleft">
+            	<h3>Call</h3>
+            	<ul>
+				
+            		<li>+91-990 787 8949</li>
+            	</ul>
+            </div>
+            <div id="socialsmid">
+				<h3>Send Mail</h3>
+                <ul>
+                	
+                    <li><a href="mailto:shubhambhattacharya.02@gmail.com">shubhambhattacharya.02@gmail.com</a></li>
+                </ul>
+            	
+            </div>
+            <div id="socialsright">
+            	<h3>Follow</h3>
+            	<ul>
+            		<li><a href="https://www.facebook.com/shubham.bhattacharya.79" target="_blank">Facebook</a></li>
+            	</ul>
+            </div>
+        </div>
+        <div class="whitebord"></div>
+        <div id="contact-form">
+        	
+        	<form id="contactForm" method="post">
+            	
+            	<div id="namefield">
+            		<input type="text" id="contactName" name="contactName" placeholder="Name" value="" class="requiredField"/>
+                </div>
+                <div class="fieldsplit">
+                	<div id="phonefield">
+                		<input type="text" id="message_phone" name="message_phone" placeholder="Phone" value="" class="requiredField"/>
+                	</div>
+                	<div id="emailfield">
+                		<input type="text" id="email" name="email" placeholder="Email" value="" class="requiredField"/>
+                	</div>
+                    <div style="clear:both"></div>
+                </div>
+                <div id="messagefield">
+                	<textarea id="message_text" name="message_text" placeholder="How can I help?" class="requiredField"></textarea>
+                </div>
+                	<input type="hidden" name="submitted" id="submitted" value="true" />
+               		<button class="progress-button i-code sendEmail" data-style="fill" data-horizontal type="button">Submit</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <div id="footer-down"><img src="img/downarrowwhite.png" alt="arrow"/></div>
+</section><!-- END CONTACT SECTION -->
+
+
+			<!-- footer -->
+			<footer class="footer">
+
+				<!-- copyright -->
+                <p><a href="mailto:shubhambhattacharya.02@gmail.com">shubhambhattacharya.02@gmail.com</a></p>
+				<div><span id="copysymbol">&copy;</span></div><p class="copyright">
+					<a href="">Shubham Bhattacharya</a> | 2015  All rights reserved.
+				</p>
+                
+				<!-- /copyright -->
+
+			</footer>
+			<!-- /footer -->
+			<div id="sizethis"></div>
+		<!--</div>-->
+		<!-- /wrapper -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.lettering.js"></script>
+		<script>
+			$(document).ready(function() {
+				$.when($("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering()).done(function(){
+					 
+				}); 
+			})
+		</script>
+		<script src="js/progressButton.js" type="text/javascript"></script>
+        <script src="js/classie.js" type="text/javascript"></script>
+        <script>
+			[].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
+				new ProgressButton( bttn, {
+					callback : function( instance ) {
+						var progress = 0,
+							interval = setInterval( function() {
+								progress = Math.min( progress + Math.random() * 0.1, 1 );
+								instance._setProgress( progress );
+
+								if( progress === 1 ) {
+									instance._stop(1);
+									clearInterval( interval );
+								}
+							}, 50 );
+					}
+				} );
+			} );
+		</script>
+		<!-- analytics -->
+		
+	</body>
+</html>

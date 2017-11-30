@@ -1,0 +1,7 @@
+#Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
+RewriteBase /
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "http://skin.cdn.com"
+    </IfModule>
+</FilesMatch>
